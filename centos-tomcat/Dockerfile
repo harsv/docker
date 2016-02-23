@@ -42,6 +42,7 @@ RUN set -x \
 	&& rm bin/*.bat \
 	&& rm tomcat.tar.gz*
 
+ADD tomcat-users.xml $CATALINA_HOME/conf/tomcat-users.xml
 EXPOSE 8080
 RUN yum remove -y tar; yum clean all
 CMD ["catalina.sh", "run"]
